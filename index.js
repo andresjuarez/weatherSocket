@@ -8,7 +8,7 @@ const DarkSky = require('./src/lib/darksky')
 
 const app = express()
 const http = require('http').createServer(app);
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 80
 const host = process.env.HOST || '0.0.0.0'
 
 process.env.REDIS_PORT = '6379'
