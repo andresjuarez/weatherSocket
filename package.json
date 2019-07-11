@@ -1,0 +1,49 @@
+{
+  "name": "weathersocket",
+  "version": "1.0.0",
+  "description": "Ripley test waether socket",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "npx pm2 start",
+    "standard": "node_modules/.bin/standard src/**/*.js",
+    "version": "conventional-changelog -p cl-backoffice-saleschannel -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresjuarez/weatherSocket.git"
+  },
+  "author": "Andres Juarez <andresalejandro18@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresjuarez/weatherSocket/issues"
+  },
+  "homepage": "https://github.com/andresjuarez/weatherSocket#readme",
+  "dependencies": {
+    "aws-sdk": "^2.491.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.14",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "redis": "^2.8.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-standard": "^13.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "pre-commit": "^1.2.2",
+    "standard": "^13.0.0"
+  },
+  "pre-commit": [
+    "standard"
+  ]
+}

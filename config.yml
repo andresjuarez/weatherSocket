@@ -1,0 +1,27 @@
+app:
+  apiToken: 't6KFdeZUUkj2Ari4sxd8OMapLXboZWSH'
+develop:
+  vtex:
+    accountName: 'jumboprepro'
+    apiKey: 'vtexappkey-jumboprepro-KMSANI'
+    apiSecret: 'YXXIAWNNSCBYLOUMRWUYQSAGGXBGHDTLFFKCPCJHKEPGIVNRRONATYEFXRCCUHFOJQSGERXONNOMDTYKKJPTPSSHAEFYAGMCYAXRCHMARZNGJSBDTRSLRMZQYLFALYOG'
+    soapHost: 'webservice-jumboprepro.vtexcommerce.com.br'
+    soapPath: '/AdminWebService/Service.svc'
+    soapWsdl: 'http://webservice-jumboprepro.vtexcommerce.com.br/service.svc?wsdl'
+    environment: 'vtexcommercestable'
+  backoffice:
+    apiUrl: 'https://api.smdigital.cl:8443/v0/cl/backoffice/qa'
+    apiKey: 'OXKAa0XhDowCF48UnV88zwwgAqpFUsal'
+    apitoken: 't6KFdeZUUkj2Ari4sxd8OMapLXboZWSH'
+production:
+  vtex:
+    accountName: 'jumbo'
+    apiKey: 'vtexappkey-jumbo-ZBXRTR'
+    apiSecret: 'VWXHSQHBPRFNAYMYCRIORJZOWDFKGNPKQHAGFGVUJEEFZWVEJKKDQMMLWILOLWUCBVWTYFTVWOFMFTPAHABWDMUEVOKWVHIMJCEEZCGDROHCGZGCTKGLVYYOBRXJVXAP'
+    soapHost: 'webservice-jumbo.vtexcommerce.com.br'
+    soapPath: '/AdminWebService/Service.svc'
+    soapWsdl: 'http://webservice-jumbo.vtexcommerce.com.br/service.svc?wsdl'
+  backoffice:
+    apiUrl: 'https://api.smdigital.cl:8443/v0/cl/backoffice/'
+    apiKey: 'OXKAa0XhDowCF48UnV88zwwgAqpFUsal'
+    apitoken: 't6KFdeZUUkj2Ari4sxd8OMapLXboZWSH'
