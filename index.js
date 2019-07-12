@@ -12,11 +12,11 @@ const port = process.env.PORT || 80
 const host = process.env.HOST || '0.0.0.0'
 
 process.env.REDIS_PORT = '6379'
-if (process.env.NODE_ENV === 'production') {
-  process.env.REDIS_HOST = 'redis-weather-001.i2yo44.0001.use1.cache.amazonaws.com'
-} else {
-  process.env.REDIS_HOST = '127.0.0.1'
-}
+// if (process.env.NODE_ENV === 'production') {
+//   process.env.REDIS_HOST = 'redis-weather-001.i2yo44.0001.use1.cache.amazonaws.com'
+// } else {
+//   process.env.REDIS_HOST = '127.0.0.1'
+// }
 
 const redis = require('./src/lib/redis')
 

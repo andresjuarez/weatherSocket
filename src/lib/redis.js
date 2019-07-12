@@ -3,7 +3,7 @@ const redis = require('redis')
 
 class Redis {
   constructor () {
-    this.host = process.env.REDIS_HOST
+    this.host = process.env.REDIS_URL || 'localhost'
     this.port = process.env.REDIS_PORT
     this.TTL = 3600
     this.client = redis.createClient({ host: this.host, port: this.port, prefix: `WEATHER` })
