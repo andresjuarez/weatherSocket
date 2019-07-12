@@ -3,11 +3,11 @@ const { forEach, get } = require('lodash')
 const applicationConfig = require('./src/config/application')
 
 const moment = require('moment')
-const tz = require('moment-timezone')
+const tz = require('moment-timezone') // eslint-disable-line
 const DarkSky = require('./src/lib/darksky')
 
 const app = express()
-const http = require('http').createServer(app);
+const http = require('http').createServer(app)
 const port = process.env.PORT || 80
 const host = process.env.HOST || '0.0.0.0'
 
@@ -32,11 +32,11 @@ const cities = [
   { name: 'Londres', coord: '51.507338,-0.127546' },
   { name: 'Georgia', coord: '32.579666,-83.234395' }
 ]
-let promises = []
+let promises = [] // eslint-disable-line
 
-const getRecursive = async(coords, city) => {
+const getRecursive = async (coords, city) => {
   const darkInstance = new DarkSky(redis)
-  return new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => { // eslint-disable-line
     try {
       const { data: weatherInfo } = await darkInstance.get(coords, city)
       return resolve(weatherInfo)
@@ -57,15 +57,15 @@ const getWeatherInfo = async (cities, socket) => {
   try {
     forEach(cities, async (value, key) => {
       const weatherInfo = await getRecursive(value, key)
-      let infoToSend = {}
+      let infoToSend = {} // eslint-disable-line
       infoToSend[key] = {
         datetime: moment().tz(weatherInfo.timezone).format(),
         temperature: get(weatherInfo, 'currently.temperature')
       }
-      console.log('DEBUG: getWeatherInfo -> weatherInfo', infoToSend)
-      socket.broadcast.emit('WEATHER', infoToSend);
+      console.log('DEBUG: getWeatherInfo -> infoToSend', infoToSend)
+      socket.broadcast.emit('WEATHER', infoToSend)
     })
-    return(0)
+    return (0)
   } catch (error) {
     console.error('DEBUG: getWeatherInfo -> error', error)
   }
@@ -78,16 +78,17 @@ forEach(cities, (city) => {
 Promise.all(promises).then(async (resp) => {
   try {
     const citiesInfo = await redis.hgetall('CITIES')
-    io.on('connection', function(socket){
-      console.log('a user connected');
+    io.on('connection', (socket) => {
+      console.log('a user connected')
+      socket.broadcast.emit('WEATHER', {})
       setInterval(() => {
         getWeatherInfo(citiesInfo, socket)
-      }, 10000);
+      }, 10000)
     })
-    app.get('/', function(req, res){
-      res.sendFile(__dirname + '/index.html');
-    });
-    
+    app.get('/', (req, res) => {
+      res.sendFile(__dirname + '/index.html') // eslint-disable-line
+    })
+
     http.listen(port, host, err => {
       if (err) { process.exit(err) }
       console.log(`
@@ -100,7 +101,6 @@ Promise.all(promises).then(async (resp) => {
       `)
     })
   } catch (error) {
-    
+
   }
 })
-
