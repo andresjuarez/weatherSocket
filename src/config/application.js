@@ -20,7 +20,7 @@ module.exports = (app) => {
     })
     next()
   }
-  app.user(allowCrossDomain)
+  app.use(allowCrossDomain)
   app.use(logRequestStart)
   app.use(bodyParser.urlencoded({ extended: true }))
   app.use(bodyParser.json())
