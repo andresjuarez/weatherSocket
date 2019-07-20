@@ -4,7 +4,8 @@ const redis = require('redis')
 class Redis {
   constructor () {
     this.TTL = 3600
-    this.client = redis.createClient({ url: 'redis://h:p5368c8903ce7ee8c9359415d00b089ff52e7b010d88287ae615e2707b10c38be@ec2-52-202-172-13.compute-1.amazonaws.com:20419', prefix: `WEATHER` })
+    this.URL = process.env.REDIS_URL
+    this.client = redis.createClient({ url: this.URL, prefix: `WEATHER` })
   }
 
   set (key, value) {
